@@ -50,6 +50,7 @@ const authenticateUser = async (req, res, next) => {
     const query = { email };
     const queryBuilder = new QueryBuilder(User.find(), query).filter().select('password', 'wrongPasswordAttemps', 'isBlocked').query;
     const user = await queryBuilder;
+    console.log(user);
     if (user.length !== 1) {
         res.status(200).json(new Response({
             status: 0,

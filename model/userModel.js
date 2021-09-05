@@ -1,24 +1,13 @@
 const mongoose = require('mongoose');
-const schemaValidator = require('../helper/userSchemaValidator');
-const constants = require('./../constants/constants');
+const userSchemaMethods = require('./../helper/userSchemaMethod');
 
 const userSchema = new mongoose.Schema({
     email: {
         type: String,
-        validate: {
-            validator: schemaValidator.validEmail,
-            message: constants.EMAIL_INVALID
-        },
-        required: [ true, constants.EMAIL_REQUIRED ],
         unique: true
     },
     password: {
         type: String,
-        required: [ true, constants.PASSWORD_REQUIRED ],
-        validate: {
-            validator: schemaValidator.validatePasswordComplexity,
-            message: constants.PASSWORD_COMPLEXITY
-        },
         select: false
     },
     passwordChangedAt: {
@@ -38,6 +27,12 @@ const userSchema = new mongoose.Schema({
     }
 });
 
+userSchema.methods = {
+    ...userSchema,
+    ...userSchemaMethods
+}
+
 const User = mongoose.model('User', userSchema, 'users');
+
 
 module.exports = User;
