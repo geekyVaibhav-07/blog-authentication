@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
         default: Date.now(),
         select: false
     },
-    wrongPasswordAttemps: {
+    wrongPasswordAttempts: {
         type: Number,
         select: false,
         default: 0,

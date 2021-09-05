@@ -8,14 +8,14 @@ const getUserById = async (_id) => {
     
 }
 
-const updatedUser = async (req) => {
-    const { _id, isBlocked, wrongPasswordAttemps } = req.user || {};
-    const response = await User.updateOne({ _id }, { isBlocked, wrongPasswordAttemps });
+const updateUser = async (req) => {
+    const { _id, isBlocked, wrongPasswordAttempts } = req.user || {};
+    const response = await User.updateOne({ _id }, { isBlocked, wrongPasswordAttempts });
     return response;
 
 }
 
 module.exports = {
-    updatedUser: errorCatcher(updatedUser),
+    updateUser: errorCatcher(updateUser),
     getUserById: errorCatcher(getUserById),
 }

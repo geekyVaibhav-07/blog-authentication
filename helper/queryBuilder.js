@@ -51,8 +51,8 @@ class QueryBuilder {
         return this;
     }
 
-    select(field) {
-        this.query = field ? this.query.select(`+${field}`) : this.query;
+    select(fields = []) {
+        this.query = fields ? this.query.select(`+${fields.join(' +')}`) : this.query;
         return this;
     }
 }
