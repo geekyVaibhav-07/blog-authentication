@@ -7,7 +7,10 @@ const router = express.Router();
 
 const sendAuthResponse = (req, res) => {
     res.status(200).json(new Response({
-        message: constants.USER_AUTHENTICATED
+        message: constants.USER_AUTHENTICATED,
+        data: [ {
+            _id: req.user._id
+        } ]
     }))
 }
 
