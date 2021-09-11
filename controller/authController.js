@@ -90,7 +90,6 @@ const isAuthenticated = async (req, res, next) => {
         req.user = user[0];
         next();
     }
-    
 }
 
 module.exports = {
