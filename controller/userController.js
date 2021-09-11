@@ -1,5 +1,5 @@
+const { errorCatcher } = require('@geekcorp/express-utils');
 const User = require('./../model/userModel');
-const errorCatcher = require('./../helper/errorCatcher');;
 const QueryBuilder = require('./../helper/queryBuilder');
 
 const getUserById = async (_id) => {
