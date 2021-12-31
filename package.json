@@ -20,8 +20,11 @@
   },
   "homepage": "https://github.com/geekyVaibhav-07/blog-users#readme",
   "dependencies": {
+    "@geekcorp/constants": "^1.0.0",
+    "@geekcorp/express-utils": "^1.0.2",
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
+    "chalk": "^4.1.2",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
@@ -29,9 +32,7 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.15",
-    "morgan": "^1.10.0",
-    "@geekcorp/constants": "^1.0.0",
-    "@geekcorp/express-utils": "^1.0.2"
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "eslint": "^7.29.0",
