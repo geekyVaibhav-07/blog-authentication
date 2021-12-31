@@ -77,6 +77,12 @@ const authenticateUser = async (req, res, next) => {
 
 const isAuthenticated = async (req, res, next) => {
     const { authToken } = req.cookies;
+    if (!authToken) {
+        return res.status(401).json(new Response({
+            status: 0,
+            message: constants.AUTHTOKEN_ERROR
+        }))
+    }
     const decodedToken = await service.verifyAuthToken(authToken);
     const user = await userController.getUserById(decodedToken._id);
     if (user.length !== 1) {
