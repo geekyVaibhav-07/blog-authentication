@@ -18,7 +18,7 @@ class Database {
             this.connection = await mongoose.connect(this.connectionString, this.options);
             return true;
         } catch (error) {
-            console.log(error);
+            console.errorLog(error);
             return false
         }
     }
